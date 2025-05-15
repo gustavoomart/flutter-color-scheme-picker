@@ -1,0 +1,116 @@
+{
+  "name": "flutter-color-scheme-picker",
+  "displayName": "Flutter Color Scheme Snippet (M3)",
+  "description": "Snippet to visualize colors from the generated theme by Material Design 3 (colorScheme) at development time.",
+  "version": "0.0.1",
+  "type": "module",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "dart",
+        "extensions": [
+          ".dart"
+        ],
+        "aliases": [
+          "Dart"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "flutter-color-scheme-picker.setAll",
+        "title": "FCS Set All"
+      },
+      {
+        "command": "flutter-color-scheme-picker.setSeedColor",
+        "title": "FCS Set Seed Color"
+      },
+      {
+        "command": "flutter-color-scheme-picker.setBrightness",
+        "title": "FCS Set Brightness"
+      },
+      {
+        "command": "flutter-color-scheme-picker.setDynamicSchemeVariant",
+        "title": "FCS Set Dynamic Scheme Variant"
+      },
+      {
+        "command": "flutter-color-scheme-picker.setContrastLevel",
+        "title": "FCS Set Contrast Level"
+      },
+      {
+        "command": "flutter-color-scheme-picker.showPicker",
+        "title": "FCS Pick"
+      }
+    ],
+    "configuration": {
+      "properties": {
+        "flutterTheme.seedColor": {
+          "type": "string",
+          "default": "#FF0000",
+          "description": "Seed color"
+        },
+        "flutterTheme.brightness": {
+          "type": "string",
+          "enum": [
+            "light",
+            "dark"
+          ],
+          "default": "light",
+          "description": "Brightness"
+        },
+        "flutterTheme.dynamicSchemeVariant": {
+          "type": "string",
+          "enum": [
+            "content",
+            "expressive",
+            "fidelity",
+            "fruitSalad",
+            "monochrome",
+            "neutral",
+            "rainbow",
+            "tonalSpot",
+            "vibrant"
+          ],
+          "default": "tonalSpot",
+          "description": "Dynamic scheme variant"
+        },
+        "flutterTheme.contrastLevel": {
+          "type": "number",
+          "default": 0,
+          "description": "Contrast level"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.100.0",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.25.1",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@material/material-color-utilities": "^0.3.0"
+  }
+}
