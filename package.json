@@ -2,8 +2,14 @@
   "name": "flutter-color-scheme-picker",
   "displayName": "Flutter Color Scheme Snippet (M3)",
   "description": "Snippet to visualize colors from the generated theme by Material Design 3 (colorScheme) at development time.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
+  "icon": "logo.png",
+  "publisher": "NiHiL",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gustavoomart/flutter-color-scheme-picker.git"
+  },
   "engines": {
     "vscode": "^1.100.0"
   },
